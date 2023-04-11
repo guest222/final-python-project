@@ -1,5 +1,5 @@
 import random
-
+import pyttsx3
 print("Welcome to game zone!Here we present scissors,papper and rock game")
 Computer_wins=0
 You_win=0
@@ -30,6 +30,9 @@ while True:
         print("Computer Wins!")
         Computer_wins+=1
 
-
-print(f"{name} wins=",You_win)
-print("Computer wins=",Computer_wins)
+speech=pyttsx3.init()
+speech.say(f"{name} wins {You_win} times")
+speech.say(f"Computer wins{Computer_wins} times")
+speech.runAndWait()
+# print(f"{name} wins=",You_win)
+# print("Computer wins=",Computer_wins)
